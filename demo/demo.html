@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>西柳家首页</title>
+    <link rel="stylesheet" href="../css/demo.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- topbox -->
+    <div id="topBox">
+        <div class="headermain">
+            <div class="header">
+                <div class="header1">
+                    <img src="../img/logo.png" alt="logo">
+                </div>
+                <div class="header2">
+                    <a id="01" href="demo01.html" target="if">首页</a>
+                    <a href="demo02.html" target="if">所有产品</a>  
+                    <a href="demo03.html" target="if">艺.系列</a>    
+                    <a href="demo04.html" target="if">简.系列</a>
+                    <a href="demo05.html" target="if">悦.系列</a>
+                    <a href="demo06.html" target="if">繁.系列</a>
+                </div>
+                <div class="header3">
+                    <div class="sousuohe">
+                        <input type="text" id="sousuo" placeholder="搜索全店">
+                    </div>
+                    <a href="#" class="aa"><span class="iconfont icon-ss4"></span></a>
+                    <a href="login.html" target="if" class="aa"><span class="iconfont icon-gr3"></span></a>
+                    <a href="#" class="aa"><span class="iconfont icon-gwc4"></span></a>
+                </div>
+                <div class="shopping">
+                    <h5>0件商品&nbsp;&nbsp;总计:￥0</h5>
+                    <div class="shoppingBottom">
+                        <a href="#"><p>去结算</p></a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+<!-- middleBox -->
+    <div id="middleBox"> 
+        <!--内嵌框架：-->
+        <iframe src="demo01.html" name="if" style="width: 100%;height:100%; box-sizing: border-box;" >
+        </iframe>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(".icon-ss4").click(function(){
+        $("#sousuo").fadeToggle(200);
+    })
+    $(".icon-gwc4").mouseover(function(){
+        $(".shopping").show();
+    })
+    $(".icon-gwc4").mouseout(function(){
+        $(".shopping").hide();
+    })
+</script>

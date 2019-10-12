@@ -1,0 +1,130 @@
+@charset"utf-8";
+html,body{
+    height:100%;
+}
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,hr,td,input,textarea{
+    margin:0;
+    padding:0;
+}
+ul,ol,li{
+    list-style: none;
+}
+img{
+    border:none;
+}
+body{
+    font-family: "微软雅黑";
+    background-color: white;
+}
+.headermain{
+width:100%;
+position: fixed;
+z-index: 100;
+top:0;
+left:0;
+border-bottom:1px solid #ddd8dd;
+}
+.header{
+    width:1205px;
+    margin: 0 auto;
+    display: flex;
+}
+.header img{
+    padding-top: 22px;
+    float: left;
+}
+.header .header2{
+        width: 730px;
+        height: 92px;
+        text-align: center;
+        line-height: 92px;
+        display: flex;
+        justify-content: space-around;
+}
+.header2 a{
+        width: 56px;
+        height: 20px;
+        color: #5f5f5f;
+        font-size: 14px;
+}
+.header .aa{
+    text-decoration:none;
+    color:black;
+}
+.header2 a:hover{
+    text-decoration:underline;
+    color: black;
+}
+.header3{
+    width:257px;
+    height:92px;
+    line-height:92px;
+    justify-content: right;
+    display:flex;
+}
+.icon-ss4{
+    display: block;
+    font-size: 16px;
+    padding-left: 55px;
+}
+.icon-ss4{
+    font-size: 26px;
+}
+.header3 a:nth-child(3){
+    padding-left: 10px;
+    padding-right: 15px;
+} 
+.sousuohe{
+    width: 100px;
+    height: 30px;
+}
+.header .shopping{
+    width: 200px;
+    height: 90px;
+    border: 1px solid #ddd8dd;
+    background-color: white;
+    position: absolute;
+    top: 68px;
+    right: 404px;
+    display: none;
+}
+#topBox .shopping h5{
+    color:#555555;
+    text-align: center;
+    margin-top: 15px;
+}
+.shoppingBottom{
+    width:130px;
+    height:30px;
+    background-color:#575454;
+    border-radius: 4px;
+    margin-left:36px;
+}
+.shoppingBottom p{
+    color:white;
+    line-height: 30px;
+    text-align: center;
+}
+#sousuo{
+    width: 120px;
+    height: 20px;
+    border-radius: 10px;
+    border: 0.5px solid gray;
+    margin-top: 30px;
+    display: none;
+    margin-left: 32px;
+}
+#topBox{
+    width:100%;
+    height:92px;
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left:0;
+    border-bottom:1px solid #ddd8dd;
+    background-color: white;
+}
+#middleBox{
+    width: 100%;
+    height:100%;
+}
