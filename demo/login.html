@@ -7,6 +7,8 @@
     <title>登录</title>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/iconfont (2).css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
    <div class="bgBox">
@@ -40,8 +42,8 @@
                     <div class="yhsd">
                         <span class="yhsd-font-text">社交账号登录</span>
                     </div>
-                    <ul>      
-                        <li>
+                    <ul>  
+                        <li class="weix">
                             <a class="iconfont icon-weixin"></a>
                         </li>
                         <li>
@@ -59,7 +61,33 @@
                         <li>
                             <a class="iconfont icon-icon1"></a>
                         </li>  
-                    </ul> 
+                    </ul>
+                    <div class="iconBox">
+                        <div class="wei">
+                            <div class="icon weixin">微信</div>
+                            <div class="iconj weixinj"></div>
+                        </div>  
+                        <div>
+                            <div class="icon QQ">QQ</div>
+                            <div class="iconj QQj"></div>
+                        </div>
+                        <div>
+                            <div class="icon wangyi1">网易云</div>
+                            <div class="iconj wangyij"></div>
+                        </div>  
+                        <div>
+                            <div class="icon douban1">豆瓣</div>
+                            <div class="iconj doubanj"></div>
+                        </div>
+                        <div>
+                            <div class="icon weibo1">微博</div>
+                            <div class="iconj weiboj"></div>
+                        </div>  
+                        <div>
+                            <div class="icon renrenwang">人人网</div>
+                            <div class="iconj renrenwangj"></div>
+                        </div>     
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,3 +130,10 @@ function hasClass(elem, cls) {
         },5000)
     }
 </script>
+<script type="text/javascript">
+    $(".weix").mouseenter(function(){
+        $(".wei").show();
+    })
+    $(".weix").mouseleave(function(){
+        $(".wei").hide();
+    })

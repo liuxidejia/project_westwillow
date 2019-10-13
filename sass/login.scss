@@ -138,6 +138,83 @@ a{
     color: rgb(143, 141, 141);
     font-size:12px;
 }
+.loginFooter .icon{
+    width:40px;
+    height:20px;
+    background-color:rgb(143, 138, 138);
+    border-radius: 5px;
+    font-size:10px;
+    color:white;
+    text-align: center;
+    line-height: 20px;
+    display: none;
+}
+.loginFooter .iconBox{
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:20px;
+    position: absolute;
+    left: 43px;
+    bottom: 94px;
+}
+.loginFooter ul {
+    padding-left: 0;
+    list-style: none;
+    width: 280px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+.loginFooter .iconfont{
+    font-size:30px;
+    color:rgb(197, 194, 194);  
+}
+.loginFooter li {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 34px;
+    position: relative;
+    cursor: pointer; 
+}
+.iconBox .iconj{
+    width:0;
+    height:0;
+    border:5px solid transparent;
+    border-top-color:rgb(143, 138, 138);
+    display: none;
+}
+.iconBox .weixinj{
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+}
+.iconBox .QQj{
+    position: absolute;
+    left: 68px;
+    bottom: -10px;
+}
+.iconBox .wangyij{
+    position: absolute;
+    left: 118px;
+    bottom: -10px;
+}
+.iconBox .doubanj{
+    position: absolute;
+    left: 164px;
+    bottom: -10px;
+}
+.iconBox .weiboj{
+    position: absolute;
+    left: 214px;
+    bottom: -10px;
+}
+.iconBox .renrenwangj{
+    position: absolute;
+    left: 260px;
+    bottom: -10px;
+}
 .loginFooter .icon-weixin:hover{
     color:rgb(18, 143, 18);
 }
@@ -155,25 +232,4 @@ a{
 }
 .loginFooter .icon-icon1:hover{
     color:rgb(180, 30, 194);
-}
-
-.loginFooter ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0;
-    list-style: none;
-    width: 280px;
-    margin: 40px auto 0;
-}
-.loginFooter .iconfont{
-    font-size:30px;
-    color:rgb(197, 194, 194);  
-}
-.loginFooter li {
-    display: inline-block;
-    padding: 0 5px;
-    font-size: 34px;
-    position: relative;
-    cursor: pointer;
 }
