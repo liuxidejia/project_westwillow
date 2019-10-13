@@ -1,0 +1,121 @@
+@charset"utf-8";
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,hr,td,input,textarea{
+	margin:0;
+	padding:0;
+}
+ul,ol,li{
+	list-style: none;
+}
+img{
+	border:none;
+}
+body{
+    font-family: "微软雅黑";
+}
+a{
+    text-decoration: none;
+}
+
+// mainbox
+.mainbox{
+    width:1225px;
+    height:400px;
+    margin:130px auto 0;
+}
+.mainbox .bgBox{
+    font-size: 30px;
+    font-weight: 100;
+    margin-top:130px;
+    margin-bottom:30px;
+}
+.mainbox .box{
+    width:100%;
+    height:300px;
+    background-color: plum;
+}
+
+
+
+/* footer */
+.footermain{
+    width: 100%;
+}
+.footer{
+    width:1205px;
+    margin: 0 auto;
+}
+.footerTop {
+    width:1205px;
+    height:50px; 
+    margin-top:30px;
+}
+.footerNav{
+    width:375px;
+    height:65px;
+    display: flex;
+    justify-content: space-between;
+}
+.footerIcon{
+    float:right;
+    margin-top:-42px;
+}
+.footerIcon .iconfont{
+    padding-left:15px;
+    color:#757070;
+}
+.footerIcon a:hover{
+    text-decoration:none;
+}
+.footerNav a{
+    font-size:12px;
+    color:#333333;
+    line-height: 65px;
+    text-align: center;
+}
+.footerNav a:hover{
+    text-decoration:none;
+    color: black;
+}
+.footerP{
+    font-size:10px;
+    color:#adadad;
+}
+/* .customer */
+.customer{
+    width:50px;
+    height:170px;
+    position:fixed;
+    right:80px;
+    bottom:100px;
+}
+.customer .ma1 img{
+    padding:0 0 10px 0; 
+}
+.ma2 img{
+    position:fixed;
+    right:80px;
+    bottom:220px;
+    display: none;
+}
+.qq:hover .ma2 img{
+    display: block;
+}
+.ma3 img{
+    position:fixed;
+    right:80px;
+    bottom:160px;
+    display: none;
+}
+.weixin:hover .ma3 img{
+    display: block;
+}
+.ma img{
+    width:80px; 
+    height:80px;
+    position:fixed;
+    right:170px;
+    bottom:130px; 
+}
+.ma{
+    display:none; 
+} 

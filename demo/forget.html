@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="../css/forget.css">
+    <link rel="stylesheet" href="../css/iconfont (2).css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- mainbox -->
+    <div class="mainbox">
+        <div class="bgBox">
+            <p>忘记密码</p>
+        </div>
+        <div class="box">
+            
+        </div>
+    </div>
+<hr/>
+<!-- footer -->
+<div class="footerbox">
+        <div class="footer">
+            <div class="footerTop">
+                <img src="../img/logo.png" alt="logo">
+            </div>
+            <div class="footerNav">
+                <a href="#">联系我们</a>
+                <a href="#">服务协议</a>
+                <a href="#">隐私政策</a>
+                <a href="#">购买须知</a>
+                <a href="#">售后服务</a>
+            </div>
+            <div class="footerIcon">
+                <a href="#"><span class="iconfont icon-wx8"></span></a>
+                <a href="#"><span class="iconfont icon-zfb4"></span></a>
+                <a href="#"><span class="iconfont icon-yhk5"></span></a>
+            </div>
+            <div>
+                <p class="footerP">浙ICP备18034664号-1</p>
+            </div>
+        </div>
+    </div>
+<!-- customer -->
+    <div class="customer">
+        <div class="qq">
+            <a class="ma1" href="#"><img src="../img/qq.jpg" alt="qq客服" title="联系客服"></a>
+            <a class="ma2" href="#"><img src="../img/zhe0.jpg" title="联系客服" alt="qq遮罩层"></a>
+        </div>
+        <div class="weixin" id="weixin1">
+            <a class="ma1" href="#" class="ma2" ><img src="../img/wx.jpg" alt="微信客服" title="微信客服"></a>
+            <a class="ma3" href="#"><img src="../img/zhe1.jpg" title="微信客服" alt="微信遮罩层"></a>
+        </div>
+        <a href="javascript:window.scrollTo(0,0)" class="returnBack" title="回到顶部"><img src="../img/return.jpg" alt="回到顶部"></a>
+    </div>
+    <div class="ma" id="ma1">
+        <img src="../img/ma.jpg" alt="二维码">
+    </div>
+</body>
+</html>
+<script>
+function hasClass(elem, cls) {
+    cls = cls || '';
+    if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+    return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
+}
+
+function addClass(ele, cls) {
+    if (!hasClass(ele, cls)) {
+    ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
+    }
+}
+
+function removeClass(ele, cls) {
+    if (hasClass(ele, cls)) {
+    var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
+    while (newClass.indexOf(' ' + cls + ' ') >= 0) {
+        newClass = newClass.replace(' ' + cls + ' ', ' ');
+    }
+    ele.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+    document.querySelector(".login-button").onclick = function(){
+        addClass(document.querySelector(".login"), "active")
+        setTimeout(function(){
+            addClass(document.querySelector(".sk-rotating-plane"), "active")
+            document.querySelector(".login").style.display = "none"
+        },800)
+        setTimeout(function(){
+            removeClass(document.querySelector(".login"), "active")
+            removeClass(document.querySelector(".sk-rotating-plane"), "active")
+            document.querySelector(".login").style.display = "block"
+            alert("登录成功")
+        },5000)
+    }
+</script>
+<script type="text/javascript">
+    $(".weix").mouseenter(function(){
+        $(".wei").show();
+    })
+    $(".weix").mouseleave(function(){
+        $(".wei").hide();
+    })

@@ -43,7 +43,7 @@ a{
     width: 100%;
     box-sizing: border-box;
     padding: 0 40px;
-    margin-bottom: 30px;
+    margin-bottom:18px;
 }
 .login-center-img img{
     width: 20px;
@@ -163,8 +163,6 @@ a{
     list-style: none;
     width: 280px;
     margin: 40px auto 0;
-    display: flex;
-    justify-content: space-between;
 }
 .loginFooter .iconfont{
     font-size:30px;
@@ -296,7 +294,6 @@ a{
 .qq:hover .ma2 img{
     display: block;
 }
-
 .ma3 img{
     position:fixed;
     right:80px;
