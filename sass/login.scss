@@ -14,7 +14,6 @@ body{
 }
 a{
     text-decoration: none;
-    color: #48e;
 }
 .bgBox{
     width:1225px;
@@ -139,16 +138,41 @@ a{
     color: rgb(143, 141, 141);
     font-size:12px;
 }
+.loginFooter .icon-weixin:hover{
+    color:rgb(18, 143, 18);
+}
+.loginFooter .icon-QQ:hover{
+    color:rgb(240, 35, 35);
+}
+.loginFooter .icon-wangyi1:hover{
+    color:rgb(59, 35, 168);
+}
+.loginFooter .icon-douban1:hover{
+    color:rgb(16, 172, 199);
+}
+.loginFooter .icon-weibo1:hover{
+    color:rgb(118, 207, 16);
+}
+.loginFooter .icon-icon1:hover{
+    color:rgb(180, 30, 194);
+}
+
 .loginFooter ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 0;
     list-style: none;
     width: 280px;
-    margin: 24px auto 0;
-    text-align: center;
+    margin: 40px auto 0;
+}
+.loginFooter .iconfont{
+    font-size:30px;
+    color:rgb(197, 194, 194);  
 }
 .loginFooter li {
     display: inline-block;
-    padding: 0 6px;
+    padding: 0 5px;
     font-size: 34px;
     position: relative;
     cursor: pointer;
