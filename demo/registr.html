@@ -48,51 +48,49 @@
                     <div class="yhsd">
                         <span class="yhsd-font-text">社交账号登录</span>
                     </div>
-                    <ul>  
-                        <li class="weix">
-                            <a class="iconfont icon-weixin"></a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-QQ"></a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-wangyi1"></a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-douban1"></a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-weibo1"></a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-icon1"></a>
-                        </li>  
-                    </ul>
                     <div class="iconBox">
-                        <div class="wei">
-                            <div class="icon weixin">微信</div>
-                            <div class="iconj weixinj"></div>
-                        </div>  
-                        <div>
-                            <div class="icon QQ">QQ</div>
-                            <div class="iconj QQj"></div>
+                        <div class="box1">
+                            <div class="icon wechat">
+                                微信
+                                <span class="iconj wecharj"></span>
+                            </div>
+                            <a class="iconfont icon-weixin"></a>
+                        </div> 
+                        <div class="box1">
+                            <div class="icon QQ">
+                                QQ
+                                <span class="iconj QQj"></span>
+                            </div>
+                            <a class="iconfont icon-QQ"></a>
                         </div>
-                        <div>
-                            <div class="icon wangyi1">网易云</div>
-                            <div class="iconj wangyij"></div>
-                        </div>  
-                        <div>
-                            <div class="icon douban1">豆瓣</div>
-                            <div class="iconj doubanj"></div>
+                        <div class="box1">
+                            <div class="icon wangyi1">
+                                网易云
+                                <span class="iconj wangyij"></span>
+                            </div>
+                            <a class="iconfont icon-wangyi1"></a>
                         </div>
-                        <div>
-                            <div class="icon weibo1">微博</div>
-                            <div class="iconj weiboj"></div>
-                        </div>  
-                        <div>
-                            <div class="icon renrenwang">人人网</div>
-                            <div class="iconj renrenwangj"></div>
-                        </div>     
+                        <div class="box1">
+                            <div class="icon douban1">
+                                豆瓣
+                                <span class="iconj doubanj"></span>
+                            </div>
+                            <a class="iconfont icon-douban1"></a>
+                        </div>
+                        <div class="box1">
+                            <div class="icon weibo1">
+                                微博
+                            <span class="iconj weiboj"></span>
+                            </div>
+                            <a class="iconfont icon-weibo1"></a>
+                        </div>
+                        <div class="box1">
+                            <div class="icon renrenwang">
+                                人人网
+                                <span class="iconj renrenwangj"></span>
+                            </div>
+                            <a class="iconfont icon-icon1"></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,10 +172,55 @@ function hasClass(elem, cls) {
         },5000)
     }
 </script>
-<script type="text/javascript">
-    $(".weix").mouseenter(function(){
-        $(".wei").show();
+ <script type="text/javascript">
+    //微信
+    $(".icon-weixin").mouseenter(function(){
+        $(".wechat").css({opacity:"1"});
     })
-    $(".weix").mouseleave(function(){
-        $(".wei").hide();
+    $(".icon-weixin").mouseleave(function(){
+        $(".wechat").css({opacity:"0"});
     })
+    //qq
+    $(".icon-QQ").mouseenter(function(){
+        $(".QQ").css({opacity:"1"});
+    })
+    $(".icon-QQ").mouseleave(function(){
+        $(".QQ").css({opacity:"0"});
+    })
+    //网易
+    $(".icon-wangyi1").mouseenter(function(){
+        $(".wangyi1").css({opacity:"1"});
+    })
+    $(".icon-wangyi1").mouseleave(function(){
+        $(".wangyi1").css({opacity:"0"});
+    })
+    //豆瓣
+    $(".icon-douban1").mouseenter(function(){
+        $(".douban1").css({opacity:"1"});
+    })
+    $(".icon-douban1").mouseleave(function(){
+        $(".douban1").css({opacity:"0"});
+    })
+    //微博
+    $(".icon-weibo1").mouseenter(function(){
+        $(".weibo1").css({opacity:"1"});
+    })
+    $(".icon-weibo1").mouseleave(function(){
+        $(".weibo1").css({opacity:"0"});
+    })
+    //人人
+    $(".icon-icon1").mouseenter(function(){
+        $(".renrenwang").css({opacity:"1"});
+    })
+    $(".icon-icon1").mouseleave(function(){
+        $(".renrenwang").css({opacity:"0"});
+    })
+
+    
+    $("#weixin1").mouseover(function(){
+        $("#ma1").show();
+    })
+    $("#weixin1").mouseout(function(){
+        $("#ma1").hide();
+    })
+</script>

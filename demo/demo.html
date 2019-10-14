@@ -53,6 +53,7 @@
 </body>
 </html>
 <script type="text/javascript">
+let myTimer=0;
     $(".icon-ss4").click(function(){
         $("#sousuo").fadeToggle(200);
     })
@@ -60,6 +61,16 @@
         $(".shopping").show();
     })
     $(".icon-gwc4").mouseout(function(){
-        $(".shopping").hide();
+        myTimer=setTimeout(function(){
+            $(".shopping").hide();
+        },200)
+    $(".shopping").mouseenter(function(){
+        clearTimeout(myTimer);
+    })
+    $(".shopping").mouseleave(function(){
+        $(this).hide();
+    })
+        
+       
     })
 </script>
