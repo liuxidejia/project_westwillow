@@ -7,8 +7,6 @@
     <title>注册</title>
     <link rel="stylesheet" href="../css/registr.css">
     <link rel="stylesheet" href="../css/iconfont (2).css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
    <div class="bgBox">
@@ -20,28 +18,40 @@
                 <div class="login-center clearfix">
                     <div class="login-center-img"><img src="../img/name.png"></div>
                     <div class="login-center-input">
-                        <input type="text" name="" value="" placeholder="手机/邮箱/用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'">
-                        <div class="login-center-input-text">用户名</div>
+                        <input id="loInput" class="biao" type="text" placeholder="手机/邮箱/用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'">
+                        <div id="flInput" class="login-center-input-text">用户名</div>
+                        <div class="probox probox1">
+                            <span class="prompt">请输入手机号或邮箱(*^▽^*)</span>
+                            <span class="pro_arr"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="login-center clearfix">
                     <div class="login-center-img"><img src="../img/password.png"></div>
                     <div class="login-center-input">
-                        <input type="password" name="" value="" placeholder="设置密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'">
-                        <div class="login-center-input-text">密码</div>
+                        <input id="passInput"  class="biao" type="password" placeholder="设置密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'">
+                        <div id="pInput" class="login-center-input-text">密码</div>
+                        <div class="probox probox2">
+                            <span class="prompt">请输入您的密码☺</span>
+                            <span class="pro_arr"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="login-center clearfix">
                         <div class="login-center-img"><img src="../img/password.png"></div>
                         <div class="login-center-input">
-                            <input type="password" name="" value="" placeholder="确认密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'">
-                            <div class="login-center-input-text">密码</div>
+                            <input id="deInput" type="password"  class="biao" placeholder="确认密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'">
+                            <div id="dInput" class="login-center-input-text">确认密码</div>
+                            <div class="probox probox3">
+                                <span class="prompt">请再次确认您的密码☺</span>
+                                <span class="pro_arr"></span>
+                            </div>
                         </div>
                     </div>
                 <div class="zhuceBox">
                     <a href="login.html">已有账号？请直接登录</a>
                 </div>
-                <div class="login-button">
+                <div id="fat-btn" class="login-button">
                     注册
                 </div>
                 <div class="loginFooter">
@@ -93,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+                <p id="messageBox"></p>
             </div>
         </div>
    </div><hr/>
@@ -136,43 +147,11 @@
     </div>
 </body>
 </html>
-<script>
-function hasClass(elem, cls) {
-    cls = cls || '';
-    if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
-    return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
-  }
-   
-  function addClass(ele, cls) {
-    if (!hasClass(ele, cls)) {
-      ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
-    }
-  }
-   
-  function removeClass(ele, cls) {
-    if (hasClass(ele, cls)) {
-      var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
-      while (newClass.indexOf(' ' + cls + ' ') >= 0) {
-        newClass = newClass.replace(' ' + cls + ' ', ' ');
-      }
-      ele.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-  }
-    document.querySelector(".login-button").onclick = function(){
-        addClass(document.querySelector(".login"), "active")
-        setTimeout(function(){
-            addClass(document.querySelector(".sk-rotating-plane"), "active")
-            document.querySelector(".login").style.display = "none"
-        },800)
-        setTimeout(function(){
-            removeClass(document.querySelector(".login"), "active")
-            removeClass(document.querySelector(".sk-rotating-plane"), "active")
-            document.querySelector(".login").style.display = "block"
-            alert("登录成功")
-        },5000)
-    }
-</script>
- <script type="text/javascript">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/cookieTools.js"></script>
+<script type="text/javascript">
     //微信
     $(".icon-weixin").mouseenter(function(){
         $(".wechat").css({opacity:"1"});
@@ -223,4 +202,142 @@ function hasClass(elem, cls) {
     $("#weixin1").mouseout(function(){
         $("#ma1").hide();
     })
+
+
+
+
+
+
+//注册框获得焦点
+    $("#loInput").focus(function(){
+        $("#flInput").css({"z-index":"2","opacity":"1","line-height":"10px"});
+        $(".probox1").css({"display":"block"});
+    }) 
+    
+    $("#loInput").blur(function(){
+        $("#flInput").css({"z-index":"0","opacity":"0","line-height":"20px"});
+        $(".probox1").css({"display":"none"});
+    }) 
+
+    
+    $("#passInput").focus(function(){
+        $("#pInput").css({"z-index":"2","opacity":"1"});
+        $(".probox2").css({"display":"block"});
+    }) 
+    
+    $("#passInput").blur(function(){
+        $("#pInput").css({"z-index":"0","opacity":"0"});
+        $(".probox2").css({"display":"none"});
+    }) 
+
+
+
+    $("#deInput").focus(function(){
+        $("#dInput").css({"z-index":"2","opacity":"1"});
+        $(".probox3").css({"display":"block"});
+    }) 
+    
+    $("#deInput").blur(function(){
+        $("#dInput").css({"z-index":"0","opacity":"0"});
+        $(".probox3").css({"display":"none"});
+    }) 
+
+//注册页面关于后端文件的代码
+jQuery.fn.extend({
+    checkname:function(){
+        //判断手机号和邮箱的合法性
+        let r = /^1[3|5|7|8|][0-9]{9}$|^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+            if(r.test(this.val())||$(this).val()==""){
+                $(this).css({ border: "1px solid rgb(204, 194, 194)", background: "rgb(253, 211, 231)"});
+                return 1;
+                }else {
+                    $(this).css({ border: "1px solid rgb(238, 55, 55)", background: "white" });
+                    return 0;  
+                }
+            },
+        checkpass:function(){//判断密码合法性
+            let t=/^[a-zA-Z_]\w{5,14}$/;//只能使用数字字母下划线，且数字不能开头，长度在6-15之间 
+            if(t.test(this.val())||$(this).val()==""){
+                $(this).css({ border: "1px solid rgb(204, 194, 194)", background: "rgb(253, 211, 231)"});
+                return 1;
+                }else{
+                    $(this).css({ border: "1px solid rgb(238, 55, 55)", background: "white" });
+                    $(this).siblings().children(".prompt").text("请输入合法的密码");
+                    return 0;
+                }
+            },
+        checkcommon:function(){ //判断两次输入的密码是否一致
+            if($(this).val()==$("#deInput").val()||$(this).val()==""){
+                $(this).css({ border: "1px solid rgb(204, 194, 194)", background: "rgb(253, 211, 231)"});
+                $(this).siblings().children(".prompt").text("请再次输入您的密码");
+                return 1;
+            }else{
+                $(this).css({ border: "1px solid rgb(238, 55, 55)", background: "white" });
+                $(this).siblings().children(".prompt").text("两次输入的密码必须一致！");
+                return 0;
+            }
+        },
+        check:function(){//输入内容不能为空
+            if($("#loInput").val()==""||$("#deInput").val()==""||$("#dInput").val()==""){
+                    alert("输入内容不能为空！");
+                    return false;
+                }
+            }
+    })
+
+    $("#loInput").blur(function(){ //账号合法性函数调用
+       $(this).checkname();
+    }).focus(function(){
+        $(this).css("color","#000");
+    })
+
+    $("#deInput").blur(function(){ //密码合法性函数调用
+        $(this).checkpass();
+    })
+
+    $("#dInput").blur(function(){ //两次密码一致性函数调用
+        $(this).checkcommon();
+    })
+
+    $(".biao").each(function(){ //输入框获得焦点显示提示信息
+        $(this).focus(function(){
+            $(this).css({ display: "block", background: "#fff" });
+            $(this).siblings().css({ display: "block"});
+        }).blur(function(){
+            $(this).siblings().css("display","none");
+        })
+    })
+    
+    $("#fat-btn").click ( function(){ //点击登录要处理的事件
+        if($(this).check()!=false && $("#loInput").checkname()==1 && $("#deInput").checkpass()==1 && $("#dInput").checkcommon()==1){//如果输入不为空，进行前后端交互
+        //1、
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("post","registr.php",true);
+
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                    if(xhr.responseText=="-1"){
+                        $("#messageBox").css({ color: "red",fontSize:"18px",textAlign:"center"});
+                        $("#messageBox").text("抱歉！该用户名已被人使用");
+                    }else if(xhr.responseText=="0"){
+                        $("#messageBox").css({ color: "red",fontSize:"18px",textAlign:"center"});
+                        $("#messageBox").text("抱歉！注册失败");
+                    }else if(xhr.responseText=="1"){
+                        $("#messageBox").css({color: "#000",fontSize:"18px",textAlign:"center"});
+                        $("#messageBox").html("注册成功，请<a href='log_in.html'>登录</a>");
+                    } 
+                }
+            }
+            //post方式：设置请求头
+            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            //post方式：把传给服务器端数据（键值对）放在send函数的参数里。
+            let sendstr = `loInput=${$("#loInput").val()}&deInput=${$("#deInput").val()}`;
+            console.log(sendstr);
+            xhr.send(sendstr);
+        }
+})
+
+
+
 </script>

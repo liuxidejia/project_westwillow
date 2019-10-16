@@ -21,7 +21,10 @@ gulp.task('watchall',async ()=>{
         gulp.src('demo/**/*')
         .pipe(gulp.dest('D:\\phpStudy\\WWW\\xiangmu\\demo'));
     });
-    //监听XX
-    
+    //监听js
+    gulp.watch('js/**/*',async ()=>{
+        gulp.src('js/**/*')
+        .pipe(gulp.dest('D:\\phpStudy\\WWW\\xiangmu\\js'));
+    });
 });
 

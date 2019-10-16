@@ -7,8 +7,6 @@
     <title>登录</title>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/iconfont (2).css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
    <div class="bgBox">
@@ -20,22 +18,30 @@
                 <div class="login-center clearfix">
                     <div class="login-center-img"><img src="../img/name.png"></div>
                     <div class="login-center-input">
-                        <input type="text" name="" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'">
-                        <div class="login-center-input-text">用户名</div>
+                        <input id="loInput" type="text" name="" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'">
+                        <div id="flInput" class="login-center-input-text">用户名</div>
+                        <div class="probox probox1">
+                            <span class="prompt">请输入您的用户名╮(￣▽ ￣)╭</span>
+                            <span class="pro_arr"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="login-center clearfix">
                     <div class="login-center-img"><img src="../img/password.png"></div>
                     <div class="login-center-input">
-                        <input type="password" name="" value="" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'">
-                        <div class="login-center-input-text">密码</div>
+                        <input id="passInput" type="password" name="" value="" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'">
+                        <div id="pInput" class="login-center-input-text">密码</div>
+                        <div class="probox probox2">
+                            <span class="prompt">请输入您的密码@_@</span>
+                            <span class="pro_arr"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="zhuceBox">
                     <a href="registr.html" name="if">注册</a>
                     <a href="forget.html">忘记密码</a>
                 </div>
-                <div class="login-button">
+                <div class="login-button" id="denglu">
                     登录
                 </div>
                 <div class="loginFooter">
@@ -130,43 +136,12 @@
     </div>
 </body>
 </html>
-<script>
-function hasClass(elem, cls) {
-    cls = cls || '';
-    if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
-    return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
-  }
-   
-  function addClass(ele, cls) {
-    if (!hasClass(ele, cls)) {
-      ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
-    }
-  }
-   
-  function removeClass(ele, cls) {
-    if (hasClass(ele, cls)) {
-      var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
-      while (newClass.indexOf(' ' + cls + ' ') >= 0) {
-        newClass = newClass.replace(' ' + cls + ' ', ' ');
-      }
-      ele.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-  }
-    document.querySelector(".login-button").onclick = function(){
-        addClass(document.querySelector(".login"), "active")
-        setTimeout(function(){
-            addClass(document.querySelector(".sk-rotating-plane"), "active")
-            document.querySelector(".login").style.display = "none"
-        },800)
-        setTimeout(function(){
-            removeClass(document.querySelector(".login"), "active")
-            removeClass(document.querySelector(".sk-rotating-plane"), "active")
-            document.querySelector(".login").style.display = "block"
-            alert("登录成功")
-        },5000)
-    }
-</script>
- <script type="text/javascript">
+<script src="../js/cookieTools.js"></script>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+ 
     //微信
     $(".icon-weixin").mouseenter(function(){
         $(".wechat").css({opacity:"1"});
@@ -209,7 +184,6 @@ function hasClass(elem, cls) {
     $(".icon-icon1").mouseleave(function(){
         $(".renrenwang").css({opacity:"0"});
     })
-
     
     $("#weixin1").mouseover(function(){
         $("#ma1").show();
@@ -217,4 +191,53 @@ function hasClass(elem, cls) {
     $("#weixin1").mouseout(function(){
         $("#ma1").hide();
     })
+
+    //登录框获得焦点
+    $("#loInput").focus(function(){
+        $("#flInput").css({"z-index":"2","opacity":"1","line-height":"10px"});
+        $(".probox1").css({"display":"block"});
+    }) 
+    
+    $("#loInput").blur(function(){
+        $("#flInput").css({"z-index":"0","opacity":"0","line-height":"20px"});
+        $(".probox1").css({"display":"none"});
+    }) 
+
+    
+    $("#passInput").focus(function(){
+        $("#pInput").css({"z-index":"2","opacity":"1"});
+        $(".probox2").css({"display":"block"});
+    }) 
+    
+    $("#passInput").blur(function(){
+        $("#pInput").css({"z-index":"0","opacity":"0"});
+        $(".probox2").css({"display":"none"});
+    }) 
+
+
+//连接后端文件login.php
+$("#denglu").click(function(){
+     let ajx =new XMLHttpRequest();
+
+     ajx.open("post","login.php",true);
+
+     ajx.onreadystatechange = function(){
+         if(ajx.readyState==4&&ajx.status==200){
+             console.log(ajx.responseText);
+             if(ajx.responseText=="1"){
+                addCookie("#username",$("#username").val(),7);
+                location.href="demo.html";
+             }else{
+                 alert("请输入正确的账号或者密码!")
+             }
+         }
+     }
+     ajx.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+     let sendstr = `username=${$("#loInput").val()}&userpass=${$("#passInput").val()}`;
+     console.log(sendstr);
+     ajx.send(sendstr);
+})
+
 </script>
+
