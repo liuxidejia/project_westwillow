@@ -28,6 +28,9 @@
                     <a href="demo06.html" target="if">繁.系列</a>
                 </div>
                 <div class="header3">
+                    <p id="hello">您好</p>
+                    <a href="rePerson.html" target="if"><span id="accLogin"></span></a>
+                    <a id="qLogin" href="#">退出</a>  
                     <div class="sousuohe">
                         <input type="text" id="sousuo" placeholder="搜索全店">
                     </div>
@@ -52,8 +55,9 @@
     </div>
 </body>
 </html>
+<script src="../js/cookieTools.js"></script>
 <script type="text/javascript">
-let myTimer=0;
+    let myTimer=0;
     $(".icon-ss4").click(function(){
         $("#sousuo").fadeToggle(200);
     })
@@ -73,4 +77,51 @@ let myTimer=0;
         
        
     })
+</script>
+
+<script>
+    
+$(function(){
+    if(getCookie("#username")){
+        var str = getCookie("#username");
+        $("#accLogin").html(str);
+        $("#hello").css({
+            display:"block"
+        });
+        $("#accLogin").css({
+            display:"block"
+        });
+        $("#qLogin").css({
+            display:"block",
+        });
+        $(".icon-ss4").css({
+            "padding-left":"0"
+        });
+        $(".aa").css({
+            "margin-right":"8px"
+        });
+        
+    }
+
+    $("#qLogin").click(function(){
+        let str = getCookie("#username");
+        if (str!=null) {
+            removeCookie("#username","");
+            location.href = "login.html";
+            $("#hello").css({
+                display:"none"
+            });
+            $("#accLogin").css({
+                display:"none"
+            });
+            $("#qLogin").css({
+                display:"none"
+            });
+            $(".icon-ss4").css({
+                "padding-left":"55px"
+            });
+            }
+        })
+    })
+
 </script>

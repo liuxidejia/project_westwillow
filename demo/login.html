@@ -225,7 +225,7 @@ $("#denglu").click(function(){
          if(ajx.readyState==4&&ajx.status==200){
              console.log(ajx.responseText);
              if(ajx.responseText=="1"){
-                addCookie("#username",$("#username").val(),7);
+                addCookie("#username",$("#loInput").val(),7,"/");
                 location.href="demo.html";
              }else{
                  alert("请输入正确的账号或者密码!")

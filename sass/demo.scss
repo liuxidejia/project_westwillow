@@ -59,11 +59,31 @@ a{
     color: black;
 }
 .header3{
-    width:257px;
+    width:350px;
     height:92px;
     line-height:92px;
-    justify-content: right;
+    justify-content: space-around;
     display:flex;
+    #hello{
+        width:136px;
+        height:92px;
+        line-height:92px;
+        display: none;
+        text-align: center;
+    }
+    #accLogin{
+        height:92px;
+        line-height:92px;
+        margin-left: 5px;
+        display: none;
+    }
+    #qLogin{
+        width:136px;
+        height:92px;
+        line-height:92px;
+        margin-left: 20px; 
+        display: none;
+    }
 }
 .icon-ss4{
     display: block;
@@ -73,10 +93,7 @@ a{
 .icon-ss4{
     font-size: 26px;
 }
-.header3 a:nth-child(3){
-    padding-left: 10px;
-    padding-right: 15px;
-} 
+ 
 .sousuohe{
     width: 100px;
     height: 30px;
