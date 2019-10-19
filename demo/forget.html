@@ -267,7 +267,7 @@ jQuery.fn.extend({
         xhr.onreadystatechange = function(){
             if(xhr.readyState==4 && xhr.status==200){
                 if(xhr.responseText=="1"){  
-                    $("#messageBox").html("亲，您的密码已修改成功，请前往请登录<a href='login.html'>登录</a>");
+                    $("#messageBox").html("亲，您的密码已修改成功，请前往请<a href='login.html'>登录</a>");
                 }else{
                     $("#messageBox").html("亲，您的用户名输入有误，请重新输入");
                 }
