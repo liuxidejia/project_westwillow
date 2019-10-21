@@ -7,8 +7,7 @@
     <title>购物车</title>
     <link rel="stylesheet" href="../css/shoppingcar.css">
     <link rel="stylesheet" href="../css/iconfont (2).css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/iconfont.css">
 </head>
 <body>
 <!-- mainbox -->
@@ -31,7 +30,9 @@
                 </div>
             </div>
             <div class="btn">
-               <a href="demo.html"><input type="text" value="去逛逛" title="去看看嘛"></a>
+                <span class="iconfont icon-gwc3"></span>
+                <div>您的购物车还没有商品，快去挑选心爱的商品吧！</div>
+                <a href="demo.html"><input type="text" value="去逛逛" title="去看看嘛"></a>
             </div>
         </div>
     </div>
@@ -75,7 +76,10 @@
     </div>
 </body>
 </html>
- <script type="text/javascript">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/cookieTools.js"></script>
+<script type="text/javascript">
     $("#weixin1").mouseover(function(){
         $("#ma1").show();
     })
@@ -83,3 +87,18 @@
         $("#ma1").hide();
     })
 </script>
+
+<script>
+    //获得cookoie值显示购物车页面 否则隐藏
+    $(function(){
+        if(getCookie("#username")){
+            var str = getCookie("#username");
+            if (str!=null) {
+                $(".btn").show();
+                }
+            }else{
+                $(".btn").hide();
+            }
+        })
+
+    </script>
